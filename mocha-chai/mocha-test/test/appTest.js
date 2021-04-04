@@ -5,17 +5,23 @@ const App = require('../app');
 
 
 describe('App', function () {
+    Result_sayHello= App.sayHello();
+    Result_add = App.addNumbers(6,3);
+    describe('sayhello',function(){
     it('app should return', function(){
-        let result =App.sayHello();
-        assert.equal(result, 'Hello world')
+        // let result =App.sayHello();
+        assert.equal(Result_sayHello, 'Hello world')
     });
     it('sayHello should return type string', function(){
-        assert.typeOf(App.sayHello(), 'string');
+        assert.typeOf(Result_sayHello, 'string');
     });
+})
+describe('addnumber',function(){
     it('addNumber should return a number', function(){
-        assert.typeOf(App.addNumbers(2,3), 'number')
+        assert.typeOf(Result_add, 'number')
     });
     it('addNumber should be greater than 5', function(){
-        assert.isAbove(App.addNumbers(5,3), 5)
+        assert.isAbove(Result_add, 5)
     })
+})
 })
